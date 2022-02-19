@@ -38,5 +38,18 @@ def prof_list(condition):
     return render_template('list_pfor.html', title='Список профессий', ll=ll, condition=condition)
 
 
+@app.route('/auto_answer/<surname>/<name>/<edu>/<job>/<sex>/<motivation>/<ready>')
+@app.route('/answer/<surname>/<name>/<edu>/<job>/<sex>/<motivation>/<ready>')
+def answer(surname, name, edu, job, sex, motivation, ready):
+    return render_template('auto_answer.html', title='Результаты анкеты',
+                           surname=surname,
+                           name=name,
+                           edu=edu,
+                           job=job,
+                           sex=sex,
+                           motivation=motivation,
+                           ready=ready)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
