@@ -17,5 +17,26 @@ def training(prof):
         return render_template('training.html', title='Научные тренажеры', image=url_for('static', filename='img/science.png'))
 
 
+@app.route('/list_prof/<condition>')
+def prof_list(condition):
+    ll = ["инженер-исследователь",
+          "пилот",
+          "строитель",
+          "экзобиолог",
+          "врач",
+          "инженер по терраформированию",
+          "климатолог",
+          "специалист по радиационной защите",
+          "астрогеолог",
+          "гляциолог",
+          "инженер жизнеобеспечения",
+          "метеоролог",
+          "оператор марсохода",
+          "киберинженер",
+          "штурман",
+          "пилот дронов"]
+    return render_template('list_pfor.html', title='Список профессий', ll=ll, condition=condition)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

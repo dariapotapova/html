@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Список профессий</h2>
+    <{{ condition }}>
+        {% for prof in ll %}
+            <li>{{ prof }}</li>
+        {% endfor %}
+    </{{ condition }}>
+{% endblock %}
